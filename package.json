@@ -8,5 +8,15 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "peerDependencies": {
+    "axe-core": "^3.1.2",
+    "cypress": "^3.1.1"
+  },
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "axe-core": "^3.1.2"
+  }
 }
