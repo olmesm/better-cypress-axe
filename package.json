@@ -17,6 +17,7 @@
     "src/index.js"
   ],
   "devDependencies": {
-    "axe-core": "^3.1.2"
+    "axe-core": "^3.1.2",
+    "semistandard": "^13.0.1"
   }
 }
