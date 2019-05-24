@@ -69,6 +69,9 @@ npm i
 
 # Build for deploy
 npm run build
+
+# Lint files
+npm run lint
 ```
 
 ## Contributing
