@@ -1,6 +1,6 @@
 /* global cy, Cypress */
 
-function cypressLogViolations ({ violations }) {
+function defaultViolationLogger ({ violations }) {
   if (violations.length) {
     cy.wrap(violations, { log: false }).each(v => {
       Cypress.log({
@@ -14,4 +14,4 @@ function cypressLogViolations ({ violations }) {
   return cy.wrap(violations, { log: false })
 }
 
-exports.cypressLogViolations = cypressLogViolations
+exports.defaultViolationLogger = defaultViolationLogger
