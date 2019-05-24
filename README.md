@@ -25,10 +25,15 @@ npm i -D better-cypress-axe
 
 Then follow the steps from [cypress-axe setup]...
 
-- [Import](https://github.com/avanslaars/cypress-axe#include-the-commands)
-- [Inject](https://github.com/avanslaars/cypress-axe#cyinjectaxe)
-- [Configure](https://github.com/avanslaars/cypress-axe#cyconfigureaxe)
-- [CheckA11y](https://github.com/avanslaars/cypress-axe#cychecka11y)
+1. Import `better-cypress-axe` by adding to `cypress/support/index.js`
+
+    ```js
+    import 'better-cypress-axe'
+    ```
+    
+1. [Inject](https://github.com/avanslaars/cypress-axe#cyinjectaxe)
+1. [Configure](https://github.com/avanslaars/cypress-axe#cyconfigureaxe)
+1. [CheckA11y](https://github.com/avanslaars/cypress-axe#cychecka11y)
 
 ## Custom Logging and Reporting
 
