@@ -1,6 +1,6 @@
 {
   "name": "better-cypress-axe",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Commands to help with Cypress-Axe",
   "main": "dist/index.js",
   "scripts": {
