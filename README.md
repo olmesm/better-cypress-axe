@@ -30,7 +30,7 @@ Then follow the steps from [cypress-axe setup]...
     ```js
     import 'better-cypress-axe'
     ```
-    
+
 1. [Inject](https://github.com/avanslaars/cypress-axe#cyinjectaxe)
 1. [Configure](https://github.com/avanslaars/cypress-axe#cyconfigureaxe)
 1. [CheckA11y](https://github.com/avanslaars/cypress-axe#cychecka11y)
@@ -42,10 +42,18 @@ You can define a custom cypress loggers and violation handing by passing in an o
 This is useful for ensuring the logging follows a certain format, or that the final report doesn't fail a build.
 
 ```js
-  cy.checkA11y({
-    logViolations: customViolationLogger,
-    violationCallback: customViolationHandler
-  });
+    // This will 
+    const customViolationLogger = violation => console.log(violation);
+    const customViolationHandler = violation => console.log(violation);
+
+  cy.checkA11y(
+      context, // can use null
+      options, // can use null
+      {
+          logger: customViolationLogger,
+          asserter: customViolationHandler
+      }
+  )
 ```
 
 ## Development

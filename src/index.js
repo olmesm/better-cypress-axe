@@ -5,8 +5,8 @@ const fs = require('fs')
 require('cypress-axe')
 
 const { configureAxe } = require('./configureAxe')
-const { defaultViolationLogger } = require('./defaultViolationLogger')
-const { defaultViolationHandler } = require('./defaultViolationHandler')
+const { defaultLogger } = require('./defaultLogger')
+const { defaultAsserter } = require('./defaultAsserter')
 
 const UT8 = 'utf8'
 
@@ -21,13 +21,13 @@ Cypress.Commands.add('injectAxe', () => {
 Cypress.Commands.add('checkA11y', (
   context,
   options,
-  {
-    violationLogger = defaultViolationLogger,
-    violationHandler = defaultViolationHandler
-  }
+  violationHandlers
 ) => {
+  const logger = (violationHandlers && violationHandlers.logger) || defaultLogger
+  const asserter = (violationHandlers && violationHandlers.asserter) || defaultAsserter
+
   cy.window({ log: false })
     .then(configureAxe(context, options))
-    .then(violationLogger)
-    .then(violationHandler)
+    .then(logger)
+    .then(asserter)
 })
