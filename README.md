@@ -10,8 +10,9 @@ This package extends the existing and already awesome [cypress-axe] package. Thi
 
 ## Who is this for?
 
--   You're battling with a [Webpack setup issue].
--   You don't want the a11y issues failing the entire e2e tests - this can be an issue if you're adding this to a existing project.
+- You're battling with a [Webpack setup issue].
+- You want custom logging in the cypress console.
+- You don't want the a11y issues failing the entire e2e tests - this can be an issue if you're adding this to a existing project.
 
 ## Installation
 
@@ -28,12 +29,12 @@ Then follow the steps from [cypress-axe setup]...
 1. Import `better-cypress-axe` by adding to `cypress/support/index.js`
 
     ```js
-    import "better-cypress-axe";
+    import "better-cypress-axe"
     ```
 
-1. [Inject](https://github.com/avanslaars/cypress-axe#cyinjectaxe)
-1. [Configure](https://github.com/avanslaars/cypress-axe#cyconfigureaxe)
-1. [CheckA11y](https://github.com/avanslaars/cypress-axe#cychecka11y)
+1. [injectAxe](https://github.com/avanslaars/cypress-axe#cyinjectaxe)
+1. [configureAxe](https://github.com/avanslaars/cypress-axe#cyconfigureaxe)
+1. [checkA11y](https://github.com/avanslaars/cypress-axe#cychecka11y)
 
 ## Custom Logging and Reporting
 
@@ -44,8 +45,8 @@ This is useful for ensuring the logging follows a certain format, or that the fi
 You'll need to add a [cypress task] to log to the terminal console.
 
 ```js
-const customViolationLogger = violation => cy.task("log", violation);
-const customViolationHandler = violation => cy.task("log", violation);
+const customViolationLogger = violation => cy.task("log", violation)
+const customViolationHandler = violation => cy.task("log", violation)
 
 cy.checkA11y(
     context, // can use null
@@ -54,7 +55,7 @@ cy.checkA11y(
         logger: customViolationLogger,
         asserter: customViolationHandler
     }
-);
+)
 ```
 
 ## Development
