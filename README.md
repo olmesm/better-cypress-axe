@@ -8,10 +8,10 @@
 
 This package extends the existing and already awesome [cypress-axe] package. This package bundles the required [axe-core] dependencies, which is the reason why I felt it should be a separate package to [cypress-axe].
 
-Who is this for?
+## Who is this for?
 
-- You're using typescript and webpack and need to overcome the [Webpack setup issue]
-- You don't want the a11y issues failing the entire e2e tests - this can be an issue if you're adding this to a existing project.
+-   You're battling with a [Webpack setup issue].
+-   You don't want the a11y issues failing the entire e2e tests - this can be an issue if you're adding this to a existing project.
 
 ## Installation
 
@@ -28,7 +28,7 @@ Then follow the steps from [cypress-axe setup]...
 1. Import `better-cypress-axe` by adding to `cypress/support/index.js`
 
     ```js
-    import 'better-cypress-axe'
+    import "better-cypress-axe";
     ```
 
 1. [Inject](https://github.com/avanslaars/cypress-axe#cyinjectaxe)
@@ -41,19 +41,20 @@ You can define a custom cypress loggers and violation handing by passing in an o
 
 This is useful for ensuring the logging follows a certain format, or that the final report doesn't fail a build.
 
-```js
-    // This will 
-    const customViolationLogger = violation => console.log(violation);
-    const customViolationHandler = violation => console.log(violation);
+You'll need to add a [cypress task] to log to the terminal console.
 
-  cy.checkA11y(
-      context, // can use null
-      options, // can use null
-      {
-          logger: customViolationLogger,
-          asserter: customViolationHandler
-      }
-  )
+```js
+const customViolationLogger = violation => cy.task("log", violation);
+const customViolationHandler = violation => cy.task("log", violation);
+
+cy.checkA11y(
+    context, // can use null
+    options, // can use null
+    {
+        logger: customViolationLogger,
+        asserter: customViolationHandler
+    }
+);
 ```
 
 ## Development
@@ -79,4 +80,5 @@ Contributions and PR's welcome
 [cypress]: https://www.cypress.io/
 [cypress-axe]: https://github.com/avanslaars/cypress-axe
 [cypress-axe setup]: https://github.com/avanslaars/cypress-axe#include-the-commands
-[Webpack setup issue]: https://github.com/avanslaars/cypress-axe/issues/7
+[cypress task]: https://docs.cypress.io/api/commands/task.html#Usage
+[webpack setup issue]: https://github.com/avanslaars/cypress-axe/issues/7
