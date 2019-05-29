@@ -19,7 +19,10 @@ This package extends the existing and already awesome [cypress-axe] package. Thi
 Assuming you already have [cypress] installed and setup.
 
 ```sh
-npm i -D better-cypress-axe
+npm install --dev better-cypress-axe
+
+# Alternatively if using yarn
+yarn add dev better-cypress-axe
 ```
 
 **NOTE:** There is no need to add [axe-core] or [cypress-axe] as they're already bundled into this package to get around the issues mentioned above.
