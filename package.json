@@ -1,6 +1,6 @@
 {
   "name": "better-cypress-axe",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Commands to help with Cypress-Axe",
   "main": "dist/index.js",
   "scripts": {
@@ -30,13 +30,13 @@
     "url": "git+https://github.com/olmesm/better-cypress-axe.git"
   },
   "devDependencies": {
-    "@types/cypress-axe": "^0.4.0",
+    "axe-core": "^3.2.2",
     "husky": "^2.3.0",
     "parcel-bundler": "^1.12.3",
     "standard": "^12.0.1"
   },
   "dependencies": {
-    "axe-core": "^3.2.2",
+    "@types/cypress-axe": "^0.4.0",
     "cypress-axe": "^0.4.1"
   }
 }
