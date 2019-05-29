@@ -61,6 +61,14 @@ cy.checkA11y(
 )
 ```
 
+### Typescript
+
+Add to `cypress/typings.d.ts`
+
+```js
+import 'better-cypress-axe'
+```
+
 ## Development
 
 ```sh
