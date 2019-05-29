@@ -12,17 +12,17 @@ const UT8 = 'utf8'
 
 const axe = fs.readFileSync('node_modules/axe-core/axe.min.js', UT8)
 
-Cypress.Commands.add('injectAxe', () => {
+function injectAxe () {
   cy.window({ log: false }).then(_window => {
     _window.eval(axe)
   })
-})
+}
 
-Cypress.Commands.add('checkA11y', (
+function checkA11y (
   context,
   options,
   violationHandlers
-) => {
+) {
   const logger = (violationHandlers && violationHandlers.logger) || defaultLogger
   const asserter = (violationHandlers && violationHandlers.asserter) || defaultAsserter
 
@@ -30,4 +30,11 @@ Cypress.Commands.add('checkA11y', (
     .then(configureAxe(context, options))
     .then(logger)
     .then(asserter)
-})
+}
+
+Cypress.Commands.add('injectAxe', injectAxe)
+
+Cypress.Commands.add('checkA11y', checkA11y)
+
+exports.injectAxe = injectAxe
+exports.checkA11y = checkA11y

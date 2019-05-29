@@ -33,7 +33,7 @@ Then follow the steps from [cypress-axe setup]...
     ```
 
 1. [injectAxe](https://github.com/avanslaars/cypress-axe#cyinjectaxe)
-1. [configureAxe](https://github.com/avanslaars/cypress-axe#cyconfigureaxe)
+1. [configureAxe](https://github.com/avanslaars/cypress-axe#cyconfigureaxe) - note this isn't required
 1. [checkA11y](https://github.com/avanslaars/cypress-axe#cychecka11y)
 
 ## Custom Logging and Reporting
