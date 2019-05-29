@@ -1,6 +1,6 @@
 {
   "name": "better-cypress-axe",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Commands to help with Cypress-Axe",
   "main": "dist/index.js",
   "scripts": {
@@ -20,9 +20,10 @@
   "peerDependencies": {
     "cypress": "^3.1.1"
   },
-  "types": "src/index.d.ts",
+  "types": "typings",
   "files": [
-    "dist/index.js"
+    "dist",
+    "typings"
   ],
   "repository": {
     "type": "git",

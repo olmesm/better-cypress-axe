@@ -52,8 +52,8 @@ const customViolationLogger = violation => cy.task("log", violation)
 const customViolationHandler = violation => cy.task("log", violation)
 
 cy.checkA11y(
-    context, // can use null
-    options, // can use null
+    context, // can use undefined
+    options, // can use undefined
     {
         logger: customViolationLogger,
         asserter: customViolationHandler
@@ -66,7 +66,7 @@ cy.checkA11y(
 Add to `cypress/typings.d.ts`
 
 ```js
-import 'better-cypress-axe'
+import "better-cypress-axe"
 ```
 
 ## Development
