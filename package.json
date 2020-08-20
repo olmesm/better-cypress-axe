@@ -18,7 +18,7 @@
   "author": "Oliver Smit <https://github.com/olmesm>",
   "license": "MIT",
   "peerDependencies": {
-    "cypress": "^5.0.0"
+    "cypress": "^3.1.1 || ^4.0.2 || ^5.0.0"
   },
   "types": "typings",
   "files": [
